@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" th:href="@{/css/dashboard.css}" />
+<title>User Profile</title>
+</head>
+<body>
+<center>
+	<div>
+		<h3 th:text="${user.firstName+' '+user.lastName}">
+		
+		</h3>
+	
+	</div>
+	<a th:href="@{'/'}" class="log-out-btn color-bg" style="background: #3AACED;">log out</a>
+	</div></center>
+</body>
+</html>

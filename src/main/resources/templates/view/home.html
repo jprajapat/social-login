@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1" />
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link rel="stylesheet" th:href="@{/css/style.css}" />
+<title>Insert title here</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<h2 style="text-align:center">Login with Social Media or Register</h2>
+			<div class="vl">
+        <span class="vl-innertext">or</span>
+      </div>
+			<div class="col">
+				<a th:href="@{'/facebooklogin'}" class="fb btn"> <i class="fa fa-facebook fa-fw"></i>
+					Login with Facebook
+				</a> <a th:href="@{'/linkedinlogin'}" class="linkedin btn"> <i class="fa fa-linkedin fa-fw"></i>
+					Login with LinkedIn
+				</a> <a th:href="@{'/googlelogin'}" class="google btn"><i class="fa fa-google fa-fw">
+				</i> Login with Google+ </a>
+			</div>
+			 <div class="col">
+        <div class="hide-md-lg">
+          <p>Or sign up manually:</p>
+        </div>
+		<form th:action="@{'/register'}" th:object="${user}" method="post">
+		<input type="text" name="firstname" placeholder="First Name" required="required" th:field="*{firstName}"/> 
+        <input type="text" name="lastname" placeholder="Last Name" required="required" th:field="*{lastName}"/>
+        <input type="email" name="email" placeholder="Email" required="required" th:field="*{email}"/> 
+        <input type="password" name="password" placeholder="Password" required="required" th:field="*{password}"/>
+		<input type="submit" value="Register"/>
+		</form>
+      </div>
+      
+		</div>
+	</div>
+</body>
+</html>
